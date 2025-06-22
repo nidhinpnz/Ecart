@@ -1,16 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Cart</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+  <header class="bg-success text-white py-3">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-md-6 d-flex align-items-center ps-5">
+          <h2 class="ps-3 mb-0"><span class="ecart-e">E</span><span>cart</span></h2>
+
+          <div class="input-group rounded ms-2" style="max-width: 300px;">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" />
+            <span class="input-group-text border-0">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-end">
+          <nav class="navbar navbar-expand-lg navbar-light w-auto">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="index.html">
+                    <i class="fa-solid fa-house me-1"></i> Home
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <div class="container mt-5">
     <h2 class="text-center">🛒 Your Shopping Cart</h2>
-    <p class="text-center text-muted">This is where your selected items will appear.</p>
-    <!-- You can later add product cards or table here -->
+    <p class="text-center text-muted">This is where your selected items appear.</p>
+    <div id="cart-items" class="mt-4"></div>
   </div>
+
+  <script>
+    const cartContainer = document.getElementById("cart-items");
+    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function displayCart() {
+      cartContainer.innerHTML = "";
+
+      if (cartItems.length === 0) {
+        cartContainer.innerHTML = "<h5 class='text-center text-muted'>Your cart is empty.</h5>";
+        return;
+      }
+
+      cartItems.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = "card rounded-3 mb-4";
+        card.innerHTML = `
+          <div class="card-body p-4">
+            <div class="row d-flex justify-content-between align-items-center">
+              <div class="col-md-2">
+                <img src="${item.image}" class="img-fluid rounded-3" alt="${item.name}">
+              </div>
+              <div class="col-md-4">
+                <h5 class="mb-2">${item.name}</h5>
+              </div>
+              <div class="col-md-2">
+                <h6 class="mb-0 text-success">₹${item.price}</h6>
+              </div>
+              <div class="col-md-4 text-end">
+                <button class="btn btn-sm btn-success me-2" onclick="buyNow(${index})">
+                  <i class="fas fa-bolt"></i> Buy Now
+                </button>
+                <button class="btn btn-sm btn-danger" onclick="removeItem(${index})">
+                  <i class="fas fa-trash"></i> Remove
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        cartContainer.appendChild(card);
+      });
+    }
+
+    function removeItem(index) {
+      cartItems.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      displayCart();
+    }
+
+    function buyNow(index) {
+      const item = cartItems[index];
+      alert(`✅ Order placed for: ${item.name}\nTotal: ₹${item.price}`);
+      cartItems.splice(index, 1); // remove after buying
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      displayCart();
+    }
+
+    displayCart();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

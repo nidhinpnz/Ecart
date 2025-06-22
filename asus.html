@@ -2,50 +2,64 @@
 <html lang="en">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="smart.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>smartWatch</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="smart.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASUS Vivobook 15</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 pt-5">
-                <div class="card">
-
-                    <img src="asus.webp" alt="asus" class="card-img-top img-fluid">
-                    <div class="card-body">
-                        <div class="card-body d-flex p-0">
-                            <button class="btn btn-primary flex-fill">Buy Now</button>
-                            <button class="btn btn-secondary flex-fill">Add to Cart</button>
-                        </div>
-
-                    </div>
-                </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 pt-5">
+        <div class="card product-card">
+          <img src="asus.webp" alt="asus" class="card-img-top img-fluid">
+          <div class="card-body">
+            <div class="card-body d-flex p-0">
+              <button class="btn btn-primary flex-fill">Buy Now</button>
+              <button class="btn btn-secondary flex-fill" id="add-to-cart">Add to Cart</button>
             </div>
-            <div class="col-md-8  pt-5 text-center" >
-<h3 class="card-title">ASUS Vivobook 15</h3>
-<p class="card-text text-muted">(AMD Ryzen 5 5500U, Thin & Light, Fingerprint Reader)</p>
-<p class="text-success fw-bold">Special price</p>
-<h4>₹43,990 <del style="color: gray;">₹56,990</del> <span style="color: red;">22% off</span></h4>
-<ul class="mt-2 mb-3 fs-5 ps-4" style="list-style-position: inside; display: inline-block; text-align: left;">
-  <li>AMD Ryzen 5 5500U Processor</li>
-  <li>15.6” FHD IPS Anti-glare Display</li>
-  <li>Integrated AMD Radeon Graphics</li>
-  <li>8GB DDR4 RAM | 512GB SSD</li>
-  <li>Windows 11 Home | MS Office 2021</li>
-  <li>Fingerprint Sensor | 42Wh Battery</li>
-</ul>
-
-            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="col-md-8 pt-5 text-center">
+        <h3 class="card-title">ASUS Vivobook 15</h3>
+        <p class="card-text text-muted">(AMD Ryzen 5 5500U, Thin & Light, Fingerprint Reader)</p>
+        <p class="text-success fw-bold">Special price</p>
+        <h4>₹43,990 <del style="color: gray;">₹56,990</del> <span style="color: red;">22% off</span></h4>
+        <ul class="mt-2 mb-3 fs-5 ps-4" style="list-style-position: inside; display: inline-block; text-align: left;">
+          <li>AMD Ryzen 5 5500U Processor</li>
+          <li>15.6” FHD IPS Anti-glare Display</li>
+          <li>Integrated AMD Radeon Graphics</li>
+          <li>8GB DDR4 RAM | 512GB SSD</li>
+          <li>Windows 11 Home | MS Office 2021</li>
+          <li>Fingerprint Sensor | 42Wh Battery</li>
+        </ul>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  </div>
 
 
+  <script>
+    document.getElementById("add-to-cart").addEventListener("click", function () {
+      const product = {
+        name: "ASUS Vivobook 15",
+        price: 43990,
+        image: "asus.webp"
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(product);
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      window.location.href = "cart.html";
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ecart</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-
   <header class="bg-success text-white py-3">
     <div class="container-fluid">
       <div class="row align-items-center">
-
         <div class="col-md-6 d-flex align-items-center ps-5">
           <h2 class="ps-3 mb-0"> <span class="ecart-e">E</span><span>cart</span></h2>
-
           <div class="input-group rounded ms-2" style="max-width: 300px;">
-            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-              aria-describedby="search-addon" />
+            <input type="search" id="searchInput" class="form-control rounded" placeholder="Search product name..." />
             <span class="input-group-text border-0" id="search-addon">
               <i class="fas fa-search"></i>
             </span>
           </div>
         </div>
-    
         <div class="col-md-6 d-flex justify-content-end">
           <nav class="navbar navbar-expand-lg navbar-light w-auto">
-
-            <a class="navbar-brand text-white " href="login.html"><i class="fa-solid fa-user me-1 "></i> Login</a>
-
+            <a class="navbar-brand text-white" href="login.html"><i class="fa-solid fa-user me-1"></i> Login</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#"><i class="fa-solid fa-house me-1 "></i> Home</a>
+                  <a class="nav-link text-white" href="#"><i class="fa-solid fa-house me-1"></i> Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="cart.html"><i class="fa-solid fa-cart-shopping me-1 "></i>Cart</a>
+                  <a class="nav-link text-white" href="cart.html"><i class="fa-solid fa-cart-shopping me-1"></i>Cart</a>
                 </li>
               </ul>
             </div>
@@ -55,226 +43,232 @@
       </div>
     </div>
   </header>
-  <section>
-    
-    <div class="container my-5">
+
+  <main id="main-content">
+
+    <!-- Latest Products -->
+    <section class="container my-5">
       <h2 class="mb-4">Latest Products</h2>
       <div class="row">
-
-     
-        <div class="col-md-4 mb-4">
-          <div class="card ">
-            <a href="smartWatch.html">
-              <img src="OIP.webp" class="card-img-top" alt="Product 1"></a>
+        <div class="col-md-4 mb-4 product-card">
+          <div class="card">
+            <a href="smartWatch.html"><img src="OIP.webp" class="card-img-top" alt="Product 1"></a>
             <div class="card-body">
               <h5 class="card-title">smart watch</h5>
-            <h5 class="card-text" style="font-weight: bold;">From ₹2,499</h5>
-
-
+              <h5 class="card-text fw-bold">From ₹2,499</h5>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4 mb-4">
-          <div class="card ">
+        <div class="col-md-4 mb-4 product-card">
+          <div class="card">
             <a href="ios16.html"><img src="iphone.jpeg" class="card-img-top" alt="Product 2"></a>
             <div class="card-body">
               <h5 class="card-title">Iphone 16</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹79,999</h5>
+              <h5 class="card-text fw-bold">From ₹79,999</h5>
             </div>
           </div>
         </div>
 
-       
-        <div class="col-md-4 mb-4">
-          <div class="card ">
+        <div class="col-md-4 mb-4 product-card">
+          <div class="card">
             <a href="speaker.html"><img src="speaker.jpeg" class="card-img-top" alt="Product 3"></a>
             <div class="card-body">
               <h5 class="card-title">Bose Portable Smart Speaker</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹29,999</h5>
+              <h5 class="card-text fw-bold">From ₹29,999</h5>
             </div>
           </div>
         </div>
-
       </div>
-    </div>
+    </section>
 
-  </section>
-
-  <section>
-    <div class="container">
-
+    <!-- Smart Phones -->
+    <section class="container">
       <h2>Smart phones</h2>
       <div class="row">
-        <div class="col-md-3 mb-4">
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
             <a href="samsungs23.html"><img src="s23.jpg" class="card-img-top" alt="samsung s23"></a>
             <div class="card-body">
               <h5 class="card-title">Samsung s23</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹70,000</h5>
+              <h5 class="card-text fw-bold">From ₹70,000</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
-           <a href="pocoF6.html"> <img src="poco.webp" class="card-img-top" alt="Poco F6"></a>
+            <a href="pocoF6.html"><img src="poco.webp" class="card-img-top" alt="Poco F6"></a>
             <div class="card-body">
               <h5 class="card-title">Poco F6</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹45,000</h5>
+              <h5 class="card-text fw-bold">From ₹45,000</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
             <a href="iphone15.html"><img src="i15.jpeg" class="card-img-top" alt="iphone 15"></a>
             <div class="card-body">
               <h5 class="card-title">iphone 15</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹70,000</h5>
+              <h5 class="card-text fw-bold">From ₹70,000</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
             <a href="moto.html"><img src="moto-g64-5G.png" class="card-img-top" alt="Motorola"></a>
             <div class="card-body">
-              <h5 class="card-title">Motorola g64 5g</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹14,999</h5>
+              <h5 class="card-title">Motorola g64 5G</h5>
+              <h5 class="card-text fw-bold">From ₹14,999</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
             <a href="vivoY29.html"><img src="vivo y29.png" class="card-img-top" alt="Vivo y29 5G"></a>
             <div class="card-body">
               <h5 class="card-title">Vivo y29 5G</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹18,000</h5>
+              <h5 class="card-text fw-bold">From ₹18,000</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
             <a href="oppoK13.html"><img src="oppo k13 5G.png" class="card-img-top" alt="Oppo k13 5G"></a>
             <div class="card-body">
               <h5 class="card-title">Oppo k13 5G</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹19,000</h5>
+              <h5 class="card-text fw-bold">From ₹19,000</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
-           <a href="infinix.html"> <img src="Infinix-Note-30-Pro.webp" class="card-img-top" alt="infinix note 13pro"></a>
+            <a href="infinix.html"><img src="Infinix-Note-30-Pro.webp" class="card-img-top" alt="infinix note 13pro"></a>
             <div class="card-body">
               <h5 class="card-title">infinix note 13pro</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹14,500</h5>
+              <h5 class="card-text fw-bold">From ₹14,500</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
             <a href="xiomi.html"><img src="xiomi redmi 12.webp" class="card-img-top" alt="xiomi redmi 12"></a>
             <div class="card-body">
               <h5 class="card-title">xiomi redmi 12</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹10,000</h5>
+              <h5 class="card-text fw-bold">From ₹10,000</h5>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-    <br>
-    <br>
-  </section>
-
-
-  <section>
-    <div class="container">
-
+    <!-- Laptops -->
+    <section class="container">
       <h2>Laptops</h2>
       <div class="row">
-        <div class="col-md-3 mb-4">
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
-           <a href="lenova.html"> <img src="lenovo.webp" class="card-img-top" alt="lenovo loq gaming laptop"></a>
+            <a href="lenova.html"><img src="lenovo.webp" class="card-img-top" alt="lenovo loq gaming laptop"></a>
             <div class="card-body">
               <h5 class="card-title">lenovo Loq</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹72,000</h5>
+              <h5 class="card-text fw-bold">From ₹72,000</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
-           <a href="tuff.html"><img src="tuff.webp" class="card-img-top" alt="tuff gaming laptop"></a> 
+            <a href="tuff.html"><img src="tuff.webp" class="card-img-top" alt="tuff gaming laptop"></a>
             <div class="card-body">
               <h5 class="card-title">Tuff gaming</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹95,000</h5>
+              <h5 class="card-text fw-bold">From ₹95,000</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
             <a href="hp.html"><img src="hp.jpeg" class="card-img-top" alt="hp laptop"></a>
             <div class="card-body">
-              <h5 class="card-title">Hp</h5>              
-               <h5 class="card-text" style="font-weight: bold;">From ₹60,000</h5>
+              <h5 class="card-title">Hp</h5>
+              <h5 class="card-text fw-bold">From ₹60,000</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
-           <a href="macbook.html"> <img src="mac.jpg" class="card-img-top" alt="macbook"></a>
+            <a href="macbook.html"><img src="mac.jpg" class="card-img-top" alt="macbook"></a>
             <div class="card-body">
               <h5 class="card-title">Macbook</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹1,05,000</h5>
+              <h5 class="card-text fw-bold">From ₹1,05,000</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
             <a href="dell.html"><img src="dell.webp" class="card-img-top" alt="Dell"></a>
             <div class="card-body">
               <h5 class="card-title">Dell</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹52,000</h5>
+              <h5 class="card-text fw-bold">From ₹52,000</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
-           <a href="asus.html"> <img src="asus.webp" class="card-img-top" alt="Asus"></a>
+            <a href="asus.html"><img src="asus.webp" class="card-img-top" alt="Asus"></a>
             <div class="card-body">
               <h5 class="card-title">Asus</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹43,500</h5>
+              <h5 class="card-text fw-bold">From ₹43,500</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
-           <a href="rog.html"><img src="rog.jpg" class="card-img-top" alt="Rog gaming"></a> 
+            <a href="rog.html"><img src="rog.jpg" class="card-img-top" alt="Rog gaming"></a>
             <div class="card-body">
               <h5 class="card-title">Rog gaming</h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹1,24,000</h5>
+              <h5 class="card-text fw-bold">From ₹1,24,000</h5>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+
+        <div class="col-md-3 mb-4 product-card">
           <div class="card">
-           <a href="samsungLap.html"> <img src="samsung.avif" class="card-img-top" alt="samsung laptop"></a>
+            <a href="samsungLap.html"><img src="samsung.avif" class="card-img-top" alt="samsung laptop"></a>
             <div class="card-body">
-              <h5 class="card-title">
-                <Sect></Sect>Samsung
-              </h5>
-               <h5 class="card-text" style="font-weight: bold;">From ₹60,000</h5>
+              <h5 class="card-title">Samsung</h5>
+              <h5 class="card-text fw-bold">From ₹60,000</h5>
             </div>
           </div>
         </div>
       </div>
+    </section>
+  </main>
 
-    </div>
-
-  </section>
-
-
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      const productCards = document.querySelectorAll('.product-card');
 
+      productCards.forEach(card => {
+        const title = card.querySelector('.card-title').innerText.toLowerCase();
+        card.style.display = title.includes(searchTerm) ? 'block' : 'none';
+      });
+    });
+  </script>
 </body>
-
 </html>
